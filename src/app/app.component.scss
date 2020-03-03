@@ -1,0 +1,13 @@
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  overflow: overlay;
+  & .nav {
+      position: sticky;
+      background: white;
+      top: 0;
+      z-index: 100;
+  }
+}

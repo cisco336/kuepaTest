@@ -1,0 +1,6 @@
+<div matRipple [matMenuTriggerFor]="menu" class="toggler__wrapper" #menuTrigger="matMenuTrigger">
+    <div class="toggler__barr" [ngClass]="{'open': menuTrigger.menuOpen}"></div>
+</div>
+<mat-menu #menu="matMenu">
+    <ng-content></ng-content>
+</mat-menu>

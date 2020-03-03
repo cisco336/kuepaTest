@@ -1,0 +1,11 @@
+<nav mat-tab-nav-bar [backgroundColor]="background" [ngClass]="{'mobile': mobile}">
+    <a disabled href="https://www.kuepa.com/co" target="_blank" class="logo">
+        <img src="assets/img/logo.png" alt="">
+    </a>
+    <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link" [active]="activeLink == link"
+        routerLink={{link.link}} [ngClass]="{'no-show': mobile}"> {{link.text}} </a>
+    <app-user-menu *ngIf="!mobile" class="last-item"></app-user-menu>
+    <app-menu-toggler *ngIf="mobile" class="last-item">
+        <button mat-menu-item *ngFor="let link of links" routerLink={{link.link}}>{{link.text}}</button>
+    </app-menu-toggler>
+</nav>

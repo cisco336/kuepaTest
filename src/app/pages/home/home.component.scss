@@ -1,0 +1,153 @@
+@import '../../../assets/scss/base';
+
+.home {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    position: relative;
+    display: grid;
+    &--title {
+      text-align: center;
+    }
+    & .filter,
+    & .thelogo {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    & .filter {
+      grid-row: 1;
+      z-index: 0;
+      filter: brightness(0.5);
+      & img {
+        width: 100vw;
+        max-height: 500px;
+        object-fit: cover;
+      }
+    }
+    & .thelogo {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      filter: grayscale(1) brightness(100);
+      & img {
+        width: 40%;
+      }
+      & p {
+        padding: 0.2rem 2rem;
+        color: white;
+      }
+    }
+  }
+  &__content {
+    display: grid;
+    padding: 1rem;
+    grid-gap: 1rem;
+    justify-content: center;
+    & .secction {
+      max-width: 600px;
+      display: grid;
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      grid-template-columns: minmax(100px, 150px) 1fr;
+      grid-template-rows: minmax(100px, 150px) auto;
+      grid-template-areas:
+        'img text'
+        'square text';
+
+      @include responsive(md) {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'img'
+          'text';
+      }
+    }
+    & img {
+      max-width: auto;
+      max-height: 70%;
+      grid-area: img;
+      justify-self: flex-end;
+      align-self: flex-end;
+      @include responsive(md) {
+        justify-self: center;
+        align-self: center;
+      }
+    }
+    & .text {
+      display: flex;
+      flex-direction: column;
+      grid-area: text;
+      margin: 0;
+      font-weight: lighter;
+      align-self: center;
+      & button {
+        max-width: 200px;
+        align-self: flex-end;
+        @include responsive(sm) {
+          align-self: center;
+          width: 100%;
+        }
+      }
+    }
+    & .square {
+      grid-area: square;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(random(255), random(255), random(255), 1);
+      justify-self: flex-end;
+      align-self: flex-start;
+      box-shadow: -22px 22px 0px -10px rgb(random(255), random(255), random(255));
+      @include responsive(md) {
+        display: none;
+      }
+    }
+  }
+}
+.photo-grid {
+  width: 100%;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-rows: 1fr;
+  align-items: flex-start;
+  grid-gap: 10px;
+  & .inner {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    & .photo {
+      display: grid;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        & span {
+          background: rgba(random(255), random(255), random(255), 0.5);
+          opacity: 1;
+        }
+      }
+      & span,
+      & img {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      & img {
+        z-index: 1;
+        max-width: 100%;
+        //   height: 100%;
+        object-fit: cover;
+      }
+      & span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        opacity: 0;
+      }
+    }
+  }
+}

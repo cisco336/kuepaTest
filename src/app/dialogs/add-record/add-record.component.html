@@ -1,0 +1,36 @@
+<div class="add__wrapper">
+    <h2>Please give us some information</h2>
+    <form [formGroup]="addForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="Enter your name">
+            <mat-error *ngIf="addForm.controls.name.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="addForm.controls.name.errors?.minlength">Sorry, you must enter at least 3 characters and
+                you entered {{addForm.controls.name.value.length}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input formControlName="lastName" matInput placeholder="Enter yout last name">
+            <mat-error *ngIf="addForm.controls.lastName.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="addForm.controls.lastName.errors?.minlength">Sorry, you must enter at least 3 characters and
+                you entered
+                {{addForm.controls.lastName.value.length}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" matInput placeholder="Give us an email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-error *ngIf="addForm.controls.email.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="addForm.controls.email.errors?.email">You must provide a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone number</mat-label>
+            <input formControlName="phone" matInput placeholder="Enter your phone nomber">
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button mat-flat-button (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="save()" [disabled]="addForm.invalid">Submit</button>
+    </div>
+</div>

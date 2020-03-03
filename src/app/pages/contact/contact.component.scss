@@ -1,0 +1,35 @@
+@import 'src/assets/scss/base';
+
+.contact__wrapper {
+    padding: 2rem 1rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 70% 30%;
+    @include responsive(md) {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
+    & .mat-card {
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        max-width: 400px;
+        & form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            width: 100%;
+        }
+        @include responsive(sm) {
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+    }
+}
+
+.actions {
+    border-top: 1px solid rgba(100, 100, 100, .3);
+    display: flex;
+    justify-content: flex-end;
+}

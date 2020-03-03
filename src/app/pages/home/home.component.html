@@ -1,0 +1,76 @@
+<div class="home__wrapper">
+    <div class="home__header">
+        <div class="thelogo">
+            <img src="assets/img/logo.png" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nihil pariatur soluta minima cupiditate
+                nesciunt ad commodi.
+            </p>
+        </div>
+        <div class="filter">
+            <img src="https://www.studying-in-spain.com/wp-content/uploads/2013/08/students-life-spain.jpg" alt="">
+        </div>
+    </div>
+    <div class="home__content">
+        <h1 class="home__content--title">
+            Lorem Ipsum
+        </h1>
+        <div class="secction">
+            <img src="https://cdn.ila-france.com/wp-content/uploads/2015/02/our-students.jpg" alt="">
+            <div class="square"></div>
+            <div class="text">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga a quaerat mollitia exercitationem rem
+                    molestiae minima, hic distinctio quasi et aliquid blanditiis asperiores perspiciatis ratione
+                    architecto consequatur recusandae fugit. Aut!
+                </p>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga a quaerat mollitia exercitationem rem
+                    molestiae
+                    minima, hic distinctio quasi et aliquid blanditiis asperiores perspiciatis ratione architecto
+                    consequatur recusandae
+                    fugit. Aut!
+                </p>
+                <button mat-raised-button color="primary">Read more</button>
+            </div>
+        </div>
+    </div>
+    <div class="photo-grid">
+        <div class="inner">
+            <div class="photo" *ngFor="let src of imagesSrc">
+                <img [src]="src" alt="">
+                <span>
+                    <button mat-icon-button>
+                        <mat-icon>
+                            search
+                        </mat-icon>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="photo" *ngFor="let src of imagesSrc2">
+                <img [src]="src" alt="">
+                <span>
+                    <button mat-icon-button>
+                        <mat-icon>
+                            search
+                        </mat-icon>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="photo" *ngFor="let src of imagesSrc3">
+                <img [src]="src" alt="">
+                <span>
+                    <button mat-icon-button>
+                        <mat-icon>
+                            search
+                        </mat-icon>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.toggler {
+  &__wrapper {
+    width: 24px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 1rem;
+  }
+  &__barr {
+    position: relative;
+    &,
+    &::after,
+    &::before {
+      transition: background-color ease-in-out 0.2s, transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+      height: 2px;
+      width: 100%;
+      background-color: black;
+    }
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+    }
+    &::after {
+      top: -8px;
+      transform-origin: right;
+    }
+    &::before {
+      bottom: -8px;
+      transform-origin: right;
+    }
+
+    &.open {
+      background-color: transparent;
+      &::after {
+        transform: translate(-3px) rotate(-43deg);
+      }
+      &::before {
+        transform: translateX(-3px) rotate(43deg);
+      }
+    }
+  }
+}

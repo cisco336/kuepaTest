@@ -1,0 +1,9 @@
+<div class="reports__wrapper">
+    <h1>Reports</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis sequi magni tempora, at adipisci ipsam, assumenda quisquam cum doloribus ab. Repellat quasi officiis laborum est eveniet sit provident quis?</p>
+    <div class="buttons">
+        <button mat-flat-button (click)="clear()">Clear data</button>
+        <button mat-raised-button color="primary" (click)="addRecord()">Add new record</button>
+    </div>
+    <app-table [data]="tableData" class="table"></app-table>
+</div>
